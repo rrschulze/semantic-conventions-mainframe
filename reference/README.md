@@ -3,7 +3,7 @@
 Validates OpenTelemetry Semantic Conventions for Mainframe <!-- TODO [OpenTelemetry Semantic Conventions for Mainframe](https://opentelemetry.io/docs/specs/semconv/mainframe/) -->
 against representative, synthetic telemetry, showing entities and attributes supported for supported feature of the mainframe, software and infrastructure.
 
-Each feature under [scenarios/](scenarios/) contains a small reference implementation
+Each feature under scenarios <!-- TODO[scenarios/](scenarios/) contains a small reference implementation -->
 (`scenario.py`) that exercises the SDK against a deterministic local mock server
 and emits OpenTelemetry spans, metrics, and logs. The tooling validates the
 captured telemetry against the semantic conventions in [../model/](../model/)
