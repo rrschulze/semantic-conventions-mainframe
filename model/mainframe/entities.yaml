@@ -6,12 +6,12 @@ groups:
     brief: A pyhsical mainframe machine.
     attributes:
       - ref: host.name
-        role: identifiying
+        role: identifying
         requirement_level: required
       - ref: host.id
         requirement_level: required
         role: descriptive
-        note: |
+        note: >
           The host.id attribute is a unique identifier for the host machine. It can be used to correlate telemetry data from different sources that pertain to the same physical mainframe machine.
       - ref: host.arch
         role: descriptive
