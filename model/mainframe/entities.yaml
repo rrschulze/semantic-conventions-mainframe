@@ -18,9 +18,9 @@ groups:
       - ref: mainframe.host.serial_number
         requirement_level: optional
         examples: ["123456789"]
-        ref: mainframe.host.type
+      - ref: mainframe.host.type
         requirement_level: optional
         examples: ["9175"]
-        ref: mainframe.host.model
+      - ref: mainframe.host.model
         requirement_level: optional
         examples: ["ME1"]
