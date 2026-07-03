@@ -1,14 +1,14 @@
-# groups:
-# - id: metric.mainframe.cpu.physical.count
-#   name: mainframe.cpu.physical.count
-#   type: metric
-#   stability: development
-#   brief: The number of physical CPUs in the mainframe system of a specific type.
-#   instrument: updowncounter
-#   unit: "{cpu}"
-#   extends: metric.system.cpu.physical.count
-#   entity_associations:
-#     - mainframe.host
-#   attributes:
-#     - ref: mainframe.cpu.type
-#       requirement_level: required
+groups:
+- id: metric.mainframe.cpu.physical.count
+  type: metric
+  metric_name: mainframe.cpu.physical.count
+  stability: development
+  brief: "The number of physical CPUs in the mainframe system of a specific type.
+  instrument: updowncounter
+  unit: "{cpu}"
+  extends: metric.system.cpu.physical.count
+  entity_associations:
+    - mainframe.host
+  attributes:
+    - ref: mainframe.cpu.type
+      requirement_level: required
