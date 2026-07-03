@@ -5,7 +5,38 @@ groups:
     brief: This document defines attributes of a Mainframe Central Processing Complex (CPC).
     attributes:
       - id: mainframe.cpu.type
-        type: string
         stability: development
         brief: "Type of the central processing complex that hosts a mainframe operating system."
-        enum: ["CP", "IFL", "zIIP", "zAAP", "ICF", "SAP"]
+        type: 
+          members:
+            - id: "CP"
+              brief: "Central Processor (CP) is the main processor of the central processing complex that hosts a mainframe operating system."
+              stability: development
+            - id: "IFL"
+              value: "IFL"
+              brief: "Integrated Facility for Linux (IFL) is a processor that is dedicated to running Linux workloads on the mainframe."
+              stability: development
+            - id: "zIIP"
+              value: "zIIP"
+              brief: "z Integrated Information Processor (zIIP) is a processor that is dedicated to running specific workloads on the mainframe, such as Java and XML processing."
+              stability: development
+            - id: "zAAP"
+              value: "zAAP"
+              brief: "z Application Assist Processor (zAAP) is a processor that is dedicated to running specific workloads on the mainframe, such as Java and XML processing."
+              stability: development
+            - id: "ICF"
+              value: "ICF"
+              brief: "Integrated Coupling Facility (ICF) is a processor that is dedicated to running workloads related to the coupling facility, which is used for high-speed communication between mainframe systems in a sysplex."
+              stability: development
+            - id: "SAP"
+              value: "SAP"
+              brief: "System Assist Processor (SAP) is a processor that is dedicated to running workloads related to system management and I/O processing on the mainframe."
+              stability: development
+            - id: "zDIIP"
+              value: "zDIIP"
+              brief: "z Data Integration Processor (zDIP) is a processor that is dedicated to running workloads related to data integration and transformation on the mainframe."
+              stability: development
+            - id: "zAAP-zIIP"
+              value: "zAAP-zIIP"
+              brief: "z Application Assist Processor (zAAP) and z Integrated Information Processor (zIIP) are both processors that are dedicated to running specific workloads on the mainframe, such as Java and XML processing. The zAAP-zIIP processor is a
+              stability: development
