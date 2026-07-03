@@ -8,7 +8,7 @@ groups:
   unit: "{cpu}"
   extends: metric.system.cpu.physical.count
   entity_associations:
-    - ref: entity.mainframe.host
+    - mainframe.host
   attributes:
     - ref: mainframe.cpu.type
       requirement_level: required
