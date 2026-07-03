@@ -1,0 +1,26 @@
+groups:
+  - id: entity.mainframe.host
+    type: entity
+    stability: development
+    name: mainframe.host
+    brief: A pyhsical mainframe machine.
+    identifying_attributes:
+      - ref: host.name
+        requirement_level: required
+      - ref: host.id
+        requirement_level: required
+        note: |
+          The host.id attribute is a unique identifier for the host machine. It can be used to correlate telemetry data from different sources that pertain to the same physical mainframe machine.
+    attributes:
+      - ref: host.arch
+        requirement_level: required
+        examples: ["s390x"]
+      - ref: mainframe.host.serial_number
+        requirement_level: optional
+        examples: ["123456789"]
+        ref: mainframe.host.type
+        requirement_level: optional
+        examples: ["9175"]
+        ref: mainframe.host.model
+        requirement_level: optional
+        examples: ["ME1"]

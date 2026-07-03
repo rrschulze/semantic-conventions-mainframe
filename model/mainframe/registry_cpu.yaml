@@ -1,0 +1,11 @@
+groups:
+  - id: registry.mainframe.cpu
+    type: attribute_group
+    display_name: Mainframe CPU attributes
+    brief: This document defines attributes of a Mainframe Central Processing Complex (CPC).
+    attributes:
+      - id: mainframe.cpu.type
+        type: string
+        stability: development
+        brief: "Type of the central processing complex that hosts a mainframe operating system."
+        enum: ["CP", "IFL", "zIIP", "zAAP", "ICF", "SAP"]

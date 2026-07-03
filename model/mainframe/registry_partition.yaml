@@ -1,10 +1,10 @@
 groups:
-  - id: registry.mainframe.lpar
+  - id: registry.mainframe.partition
     type: attribute_group
-    display_name: Mainframe LPAR attributes
+    display_name: Mainframe Partition attributes
     brief: This document defines attributes of a Mainframe Logical Partition (LPAR).
     attributes:
-      - id: mainframe.lpar.name
+      - id: mainframe.partition.name
         type: string
         stability: development
         brief: "Name of the logical partition that hosts a systems with a mainframe operating system."
