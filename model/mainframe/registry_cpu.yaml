@@ -10,6 +10,7 @@ groups:
         type: 
           members:
             - id: "CP"
+              value
               brief: "Central Processor (CP) is the main processor of the central processing complex that hosts a mainframe operating system."
               stability: development
             - id: "IFL"

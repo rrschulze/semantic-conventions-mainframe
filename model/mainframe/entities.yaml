@@ -9,13 +9,13 @@ groups:
         role: identifying
         requirement_level: required
       - ref: host.id
-        requirement_level: required
+        requirement_level: recommended
         role: descriptive
         note: >
           The host.id attribute is a unique identifier for the host machine. It can be used to correlate telemetry data from different sources that pertain to the same physical mainframe machine.
       - ref: host.arch
         role: descriptive
-        requirement_level: required
+        requirement_level: recommended
         examples: ["s390x"]
       - ref: mainframe.host.serial_number
         role: descriptive
