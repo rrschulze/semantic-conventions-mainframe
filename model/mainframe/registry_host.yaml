@@ -18,3 +18,4 @@ groups:
         type: string
         stability: development
         brief: "Model of the central processing complex that hosts a mainframe operating system."
+        examples: ["ME1"]

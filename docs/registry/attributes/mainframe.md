@@ -7,5 +7,22 @@
 
 | Key | Stability | Value Type | Description | Example Values |
 | --- | --- | --- | --- | --- |
-| <a id="mainframe-lpar-name" href="#mainframe-lpar-name">`mainframe.lpar.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Name of the logical partition that hosts a systems with a mainframe operating system. | `LPAR01` |
+| <a id="mainframe-cpu-type" href="#mainframe-cpu-type">`mainframe.cpu.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of the central processing complex that hosts a mainframe operating system. | `CP`; `IFL`; `zIIP` |
+| <a id="mainframe-host-model" href="#mainframe-host-model">`mainframe.host.model`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Model of the central processing complex that hosts a mainframe operating system. | `ME1` |
+| <a id="mainframe-host-serial-number" href="#mainframe-host-serial-number">`mainframe.host.serial_number`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Serial number of the central processing complex that hosts a mainframe operating system. | `CPC01` |
+| <a id="mainframe-host-type" href="#mainframe-host-type">`mainframe.host.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of the central processing complex that hosts a mainframe operating system. | `9175` |
+| <a id="mainframe-partition-name" href="#mainframe-partition-name">`mainframe.partition.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Name of the logical partition that hosts a systems with a mainframe operating system. | `LPAR01` |
 
+
+---
+
+`mainframe.cpu.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `CP` | Central Processor (CP) is the main processor of the central processing complex that hosts a mainframe operating system. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `ICF` | Integrated Coupling Facility (ICF) is a processor that is dedicated to running workloads related to the coupling facility, which is used for high-speed communication between mainframe systems in a sysplex. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `IFL` | Integrated Facility for Linux (IFL) is a processor that is dedicated to running Linux workloads on the mainframe. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `SAP` | System Assist Processor (SAP) is a processor that is dedicated to running workloads related to system management and I/O processing on the mainframe. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `zAAP` | z Application Assist Processor (zAAP) is a processor that is dedicated to running specific workloads on the mainframe, such as Java and XML processing. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `zIIP` | z Integrated Information Processor (zIIP) is a processor that is dedicated to running specific workloads on the mainframe, such as Java and XML processing. | ![Development](https://img.shields.io/badge/-development-blue) |
