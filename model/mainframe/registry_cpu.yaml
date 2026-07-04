@@ -10,7 +10,7 @@ groups:
         type: 
           members:
             - id: "CP"
-              value
+              value: "CP"
               brief: "Central Processor (CP) is the main processor of the central processing complex that hosts a mainframe operating system."
               stability: development
             - id: "IFL"
@@ -33,11 +33,4 @@ groups:
               value: "SAP"
               brief: "System Assist Processor (SAP) is a processor that is dedicated to running workloads related to system management and I/O processing on the mainframe."
               stability: development
-            - id: "zDIIP"
-              value: "zDIIP"
-              brief: "z Data Integration Processor (zDIP) is a processor that is dedicated to running workloads related to data integration and transformation on the mainframe."
-              stability: development
-            - id: "zAAP-zIIP"
-              value: "zAAP-zIIP"
-              brief: "z Application Assist Processor (zAAP) and z Integrated Information Processor (zIIP) are both processors that are dedicated to running specific workloads on the mainframe, such as Java and XML processing. The zAAP-zIIP processor is a
-              stability: development
+
