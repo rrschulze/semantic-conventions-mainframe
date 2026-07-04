@@ -3,7 +3,7 @@ groups:
   type: metric
   metric_name: mainframe.cpu.physical.count
   stability: development
-  brief: "The number of physical CPUs in the mainframe system of a specific type.
+  brief: "The number of physical CPUs in the mainframe system of a specific type."
   instrument: updowncounter
   unit: "{cpu}"
   extends: metric.system.cpu.physical.count
