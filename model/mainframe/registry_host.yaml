@@ -1,21 +1,21 @@
 groups:
   - id: registry.mainframe.host
     type: attribute_group
-    display_name: Mainframe hosts attributes
-    brief: This document defines attributes of a Mainframe Central Processing Complex (CPC).
+    display_name: Mainframe host attributes
+    brief: This document defines attributes for a mainframe host, representing the physical machine known as the Central Processor Complex (CPC).
     attributes:
       - id: mainframe.host.serial_number
         type: string
         stability: development
-        brief: "Serial number of the central processing complex that hosts a mainframe operating system."
-        examples: ["CPC01"]
-      - id: mainframe.host.type
+        brief: "Serial number of the central processing complex (CPC)."
+        examples: ["0000000ABCDE"]
+      - id: mainframe.host.machine_type
         type: string
         stability: development
-        brief: "Type of the central processing complex that hosts a mainframe operating system."
-        examples: ["9175"]
-      - id: mainframe.host.model
+        brief: "Four-digit IBM machine type of the Central Processor Complex (CPC)."
+        examples: ["9175", "3931"]
+      - id: mainframe.host.machine_model
         type: string
         stability: development
-        brief: "Model of the central processing complex that hosts a mainframe operating system."
-        examples: ["ME1"]
+        brief: "IBM machine model of the Central Processor Complex (CPC)."
+        examples: ["ME1", "ML1", "A01", "LA1"]

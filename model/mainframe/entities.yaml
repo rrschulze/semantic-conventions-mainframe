@@ -3,16 +3,24 @@ groups:
     type: entity
     stability: development
     name: mainframe.host
-    brief: A pyhsical mainframe machine.
+    brief: A mainframe host, representing the pyhsical machine, also known as the Central Processor Complex (CPC). 
     attributes:
       - ref: host.name
         role: identifying
         requirement_level: required
+        examples: ["CPC01"]
       - ref: host.id
         requirement_level: recommended
         role: descriptive
         note: >
-          The host.id attribute is a unique identifier for the host machine. It can be used to correlate telemetry data from different sources that pertain to the same physical mainframe machine.
+          The host.id SHOULD be the object-id UUID of the Central Processor Complex (CPC) as defined by the Hardware Management Console (HMC) Web Services API.
+        examples: ["d9c47445-64df-39f6-9d74-6376701508b5"]
+      - ref: host.type
+        role: descriptive
+        requirement_level: recommended
+        note: >
+          The host.type SHOULD be the concatenation of the IBM machine type and model of the Central Processor Complex (CPC).
+        examples: ["9175-ME1"]      
       - ref: host.arch
         role: descriptive
         requirement_level: recommended
@@ -20,12 +28,12 @@ groups:
       - ref: mainframe.host.serial_number
         role: descriptive
         requirement_level: recommended
-        examples: ["123456789"]
-      - ref: mainframe.host.type
+        examples: ["0000000ABCDE"]
+      - ref: mainframe.host.machine_type
         role: descriptive
         requirement_level: recommended
         examples: ["9175"]
-      - ref: mainframe.host.model
+      - ref: mainframe.host.machine_model
         role: descriptive
         requirement_level: recommended
         examples: ["ME1"]

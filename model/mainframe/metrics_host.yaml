@@ -12,3 +12,5 @@ groups:
   attributes:
     - ref: mainframe.cpu.type
       requirement_level: required
+    - ref: mainframe.cpu.mode
+      requirement_level: required
