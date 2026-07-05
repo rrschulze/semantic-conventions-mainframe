@@ -1,0 +1,13 @@
+groups:
+- id: metric.mainframe.host.memory.size
+  type: metric  
+  metric_name: mainframe.host.memory.size
+  stability: development
+  brief: "Size of memory in the mainframe system of a specific type."
+  instrument: gauge
+  unit: "MiBy"
+  entity_associations:
+    - mainframe.host
+  attributes:
+    - ref: mainframe.memory.type
+      requirement_level: required

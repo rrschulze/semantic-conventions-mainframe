@@ -1,7 +1,7 @@
 groups:
 - id: metric.mainframe.host.cpu.active.count
   type: metric
-  metric_name: mainframe.cpu.active.count
+  metric_name: mainframe.host.cpu.active.count
   stability: development
   brief: "The number of active processors in the mainframe system of a specific type."
   instrument: updowncounter
@@ -14,7 +14,7 @@ groups:
       requirement_level: required
 - id: metric.mainframe.host.cpu.defective.count
   type: metric
-  metric_name: mainframe.cpu.defective.count
+  metric_name: mainframe.host.cpu.defective.count
   stability: development
   brief: "The number of defective processors in the mainframe system."
   instrument: updowncounter
@@ -23,7 +23,7 @@ groups:
     - mainframe.host
 - id: metric.mainframe.host.cpu.spare.count
   type: metric
-  metric_name: mainframe.cpu.spare.count
+  metric_name: mainframe.host.cpu.spare.count
   stability: development
   brief: "The number of spare processors in the mainframe system."
   instrument: updowncounter
