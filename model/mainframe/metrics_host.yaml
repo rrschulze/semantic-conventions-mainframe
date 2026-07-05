@@ -1,77 +1,117 @@
 groups:
-- id: metric.mainframe.host.cpu.active.count
-  type: metric
-  metric_name: mainframe.host.cpu.active.count
-  stability: development
-  brief: "The number of active processors in the mainframe system of a specific type."
-  instrument: updowncounter
-  unit: "{cpu}"
-  extends: metric.system.cpu.physical.count
-  entity_associations:
-    - mainframe.host
-  attributes:
-    - ref: mainframe.cpu.type
-      requirement_level: required
-- id: metric.mainframe.host.cpu.defective.count
-  type: metric
-  metric_name: mainframe.host.cpu.defective.count
-  stability: development
-  brief: "The number of defective processors in the mainframe system."
-  instrument: updowncounter
-  unit: "{cpu}"
-  entity_associations:
-    - mainframe.host
-- id: metric.mainframe.host.cpu.spare.count
-  type: metric
-  metric_name: mainframe.host.cpu.spare.count
-  stability: development
-  brief: "The number of spare processors in the mainframe system."
-  instrument: updowncounter
-  unit: "{cpu}"
-  entity_associations:
-    - mainframe.host
-- id: metric.mainframe.host.memory.size
-  type: metric  
-  metric_name: mainframe.host.memory.size
-  stability: development
-  brief: "Size of memory in the mainframe system of a specific type."
-  instrument: gauge
-  unit: "MiBy"
-  entity_associations:
-    - mainframe.host
-  attributes:
-    - ref: mainframe.memory.type
-      requirement_level: required
-- id: metric.mainframe.host.memory.vfm.increment.size
-  type: metric  
-  metric_name: mainframe.host.memory.vfm.increment.size
-  stability: development
-  brief: "Size of the IBM Virtual Flash Memory (VFM) memory increments of the mainframe system."
-  instrument: gauge
-  unit: "GiBy"
-  entity_associations:
-    - mainframe.host
-- id: metric.mainframe.host.memory.vfm.size
-  type: metric  
-  metric_name: mainframe.host.memory.vfm.size
-  stability: development
-  brief: "Total size of the installed IBM Virtual Flash Memory (VFM) memory in the mainframe system."
-  instrument: gauge
-  unit: "GiBy"
-  entity_associations:
-    - mainframe.host
-- id: metric.mainframe.host.cpu.utilization
-  type: metric
-  metric_name: mainframe.host.cpu.utilization
-  stability: development
-  brief: "The utilization of the processors of the given type in the mainframe system."
-  instrument: gauge
-  unit: "{cpu}"
-  extends: metric.system.cpu.utilization
-  entity_associations:
-    - mainframe.host
-  attributes:
-    - ref: mainframe.cpu.type
-      requirement_level: required
-    - ref: mainframe.cpu.mode
-      requirement_level: required
+# Active processors
+  - id: metric.mainframe.host.cpu.active.count
+    type: metric
+    metric_name: mainframe.host.cpu.active.count
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "The number of active processors in the mainframe system of a specific type."
+    instrument: updowncounter
+    unit: "{cpu}"
+    extends: metric.system.cpu.physical.count
+    entity_associations:
+      - mainframe.host
+    attributes:
+      - ref: mainframe.cpu.type
+        requirement_level: required
+# Defective processors
+  - id: metric.mainframe.host.cpu.defective.count
+    type: metric
+    metric_name: mainframe.host.cpu.defective.count
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "The number of defective processors in the mainframe system."
+    instrument: updowncounter
+    unit: "{cpu}"
+    entity_associations:
+      - mainframe.host
+# Spare processors
+  - id: metric.mainframe.host.cpu.spare.count
+    type: metric
+    metric_name: mainframe.host.cpu.spare.count
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "The number of spare processors in the mainframe system."
+    instrument: updowncounter
+    unit: "{cpu}"
+    entity_associations:
+      - mainframe.host
+# Memory size metrics
+  - id: metric.mainframe.host.memory.size
+    type: metric  
+    metric_name: mainframe.host.memory.size
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "Size of memory in the mainframe system of a specific type."
+    instrument: gauge
+    unit: "MiBy"
+    entity_associations:
+      - mainframe.host
+    attributes:
+      - ref: mainframe.memory.type
+        requirement_level: required
+# VFM memory size metrics
+  - id: metric.mainframe.host.memory.vfm.increment.size
+    type: metric  
+    metric_name: mainframe.host.memory.vfm.increment.size
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "Size of the IBM Virtual Flash Memory (VFM) memory increments of the mainframe system."
+    instrument: gauge
+    unit: "GiBy"
+    entity_associations:
+      - mainframe.host
+  - id: metric.mainframe.host.memory.vfm.size
+    type: metric  
+    metric_name: mainframe.host.memory.vfm.size
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "Total size of the installed IBM Virtual Flash Memory (VFM) memory in the mainframe system."
+    instrument: gauge
+    unit: "GiBy"
+    entity_associations:
+      - mainframe.host
+# Average channel utilization metric. One possible source is the CPC metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.host.channel.utilization
+    type: metric
+    metric_name: mainframe.host.channel.utilization
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "The average percentage of time the channels of the mainframe system were processing I/O."
+    instrument: gauge
+    unit: "{cpu}"
+    entity_associations:
+      - mainframe.host
+# CPU utilization metrics. One possible source is the CPC metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.host.cpu.utilization
+    type: metric
+    metric_name: mainframe.host.cpu.utilization
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "The utilization percentage for processors of the specified type. Set to -1 when no processors of this type are present."
+    instrument: gauge
+    unit: "{cpu}"
+    extends: metric.system.cpu.utilization
+    entity_associations:
+      - mainframe.host
+    attributes:
+      - ref: mainframe.cpu.type
+        requirement_level: required
+      - ref: mainframe.cpu.mode
+        requirement_level: required

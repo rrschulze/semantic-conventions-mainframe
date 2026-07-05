@@ -55,3 +55,21 @@ groups:
         role: descriptive
         requirement_level: recommended
         examples: ["LPAR01", "shared"]
+  - id: entity.mainframe.adapter
+    type: entity
+    stability: development
+    name: mainframe.adapter
+    brief: A mainframe adapter, representing the physical I/O adapter that connects the Central Processor Complex (CPC) to peripheral devices. 
+    attributes:
+      - ref: mainframe.adapter.name
+        role: identifying
+        requirement_level: required
+        examples: ["0.00", "0.2D", "1.E3"]
+      - ref: mainframe.adapter.type
+        role: descriptive
+        requirement_level: required
+        examples: ["dedicated", "shared"]
+      - ref: mainframe.channel.owning.partition
+        role: descriptive
+        requirement_level: recommended
+        examples: ["LPAR01", "shared"]

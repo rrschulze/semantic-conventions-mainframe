@@ -7,17 +7,32 @@
 
 | Key | Stability | Value Type | Description | Example Values |
 | --- | --- | --- | --- | --- |
+| <a id="mainframe-adapter-name" href="#mainframe-adapter-name">`mainframe.adapter.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The name of the I/O adapter in the form CSS.Chpid. | `0.00`; `0.2D`; `1.E3` |
+| <a id="mainframe-adapter-owning-partition" href="#mainframe-adapter-owning-partition">`mainframe.adapter.owning.partition`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The partition that owns the I/O adapter, in case the adapter is dedicated to a specific partition. If the adapter is shared, this attribute is set to 'shared'. | `LPAR01`; `shared` |
+| <a id="mainframe-adapter-type" href="#mainframe-adapter-type">`mainframe.adapter.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of the adapter. | `crypto`; `accelerator`; `network` |
 | <a id="mainframe-channel-mode" href="#mainframe-channel-mode">`mainframe.channel.mode`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Mode the I/O channel is operating in. The mode can be either 'dedicated' or 'shared'. | `dedicated`; `shared` |
 | <a id="mainframe-channel-name" href="#mainframe-channel-name">`mainframe.channel.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The name of the I/O channel in the form CSS.Chpid. | `0.00`; `0.2D`; `1.E3` |
 | <a id="mainframe-channel-owning-partition" href="#mainframe-channel-owning-partition">`mainframe.channel.owning.partition`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The partition that owns the I/O channel, in case the channel is dedicated to a specific partition. If the channel is shared, this attribute is set to 'shared'. | `LPAR01`; `shared` |
-| <a id="mainframe-cpu-mode" href="#mainframe-cpu-mode">`mainframe.cpu.mode`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Mode the processor is operating in. The mode can be either 'dedicated' or 'shared'. | `dedicated`; `shared` |
+| <a id="mainframe-cpu-mode" href="#mainframe-cpu-mode">`mainframe.cpu.mode`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Mode the processor is operating in. The mode can be either 'dedicated' or 'shared'. | `all`; `dedicated`; `shared` |
 | <a id="mainframe-cpu-name" href="#mainframe-cpu-name">`mainframe.cpu.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The name of the processor in the form processor-type + processor ID. | `IFL01` |
-| <a id="mainframe-cpu-type" href="#mainframe-cpu-type">`mainframe.cpu.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of mainframe processor. | `CP`; `ICF`; `IFL` |
+| <a id="mainframe-cpu-type" href="#mainframe-cpu-type">`mainframe.cpu.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of mainframe processor. | `all`; `CP`; `ICF` |
 | <a id="mainframe-host-machine-model" href="#mainframe-host-machine-model">`mainframe.host.machine_model`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | IBM machine model of the Central Processor Complex (CPC). | `ME1`; `ML1`; `A01`; `LA1` |
 | <a id="mainframe-host-machine-type" href="#mainframe-host-machine-type">`mainframe.host.machine_type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Four-digit IBM machine type of the Central Processor Complex (CPC). | `9175`; `3931` |
 | <a id="mainframe-host-serial-number" href="#mainframe-host-serial-number">`mainframe.host.serial_number`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Serial number of the central processing complex (CPC). | `0000000ABCDE` |
+| <a id="mainframe-memory-type" href="#mainframe-memory-type">`mainframe.memory.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of mainframe memory. | `total`; `HSA`; `partitions` |
 | <a id="mainframe-partition-name" href="#mainframe-partition-name">`mainframe.partition.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Name of the logical partition that hosts a systems with a mainframe operating system. | `LPAR01` |
 
+
+---
+
+`mainframe.adapter.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `accelerator` | An accelerator adapter. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `crypto` | A crypto adapter. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `network` | A network adapter. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `storage` | A storage adapter. | ![Development](https://img.shields.io/badge/-development-blue) |
 
 ---
 
@@ -34,6 +49,7 @@
 
 | Value | Description | Stability |
 | --- | --- | --- |
+| `all` | All mainframe processors, both shared and dedicated | ![Development](https://img.shields.io/badge/-development-blue) |
 | `dedicated` | The processor is dedicated to a specific partition and cannot be shared with other partitions. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `shared` | The processor can be shared among multiple partitions and is not dedicated to a specific partition. | ![Development](https://img.shields.io/badge/-development-blue) |
 
@@ -43,8 +59,22 @@
 
 | Value | Description | Stability |
 | --- | --- | --- |
+| `all` | All types of mainframe processors. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `CP` | Central Processor (CP) is the main processor of the central processing complex that hosts a mainframe operating system. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `ICF` | Integrated Coupling Facility (ICF) is a processor that is dedicated to running workloads related to the coupling facility, which is used for high-speed communication between mainframe systems in a sysplex. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `IFL` | Integrated Facility for Linux (IFL) is a processor that is dedicated to running Linux workloads on the mainframe. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `SAP` | System Assist Processor (SAP) is a processor that is dedicated to running workloads related to system management and I/O processing on the mainframe. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `zIIP` | z Integrated Information Processor (zIIP) is a processor that is dedicated to running specific workloads on the mainframe, such as Java applications. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+---
+
+`mainframe.memory.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `available` | Memory not allocated to active partitions in the mainframe system and available for use. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `central` | Memory allocated as central storage across the active partitions in the mainframe system. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `expanded` | Memory allocated as expanded storage across the active partitions in the mainframe system. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `HSA` | Memory reserved for the base hardware system area (HSA), which is used for system management and I/O processing on the mainframe. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `partitions` | Memory for use by partitions, which are logical divisions of the mainframe system that can run separate operating systems and workloads. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `total` | Total amount of installed memory in the mainframe system. | ![Development](https://img.shields.io/badge/-development-blue) |

@@ -4,6 +4,35 @@
 This document describes the `mainframe` entities.
 
 
+## `mainframe.adapter` ![Development](https://img.shields.io/badge/-development-blue)
+
+A mainframe adapter, representing the physical I/O adapter that connects the Central Processor Complex (CPC) to peripheral devices.
+
+
+| Property | Value |
+|----------|-------|
+| Stability | Development |
+
+
+
+
+### Identity
+
+| Attribute | Type | Requirement Level | Description |
+|-----------|------|-------------------|-------------|
+| `mainframe.adapter.name` | `string` | Required | The name of the I/O adapter in the form CSS.Chpid. |
+
+
+
+### Description
+
+| Attribute | Type | Requirement Level | Description |
+|-----------|------|-------------------|-------------|
+| `mainframe.adapter.type` | Enum | Required | Type of the adapter. |
+| `mainframe.channel.owning.partition` | `string` | Recommended | The partition that owns the I/O channel, in case the channel is dedicated to a specific partition. If the channel is shared, this attribute is set to 'shared'. |
+
+
+
 ## `mainframe.channel` ![Development](https://img.shields.io/badge/-development-blue)
 
 A mainframe channel, representing the physical I/O channel that connects the Central Processor Complex (CPC) to peripheral devices.
