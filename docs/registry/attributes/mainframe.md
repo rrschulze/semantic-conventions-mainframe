@@ -7,6 +7,9 @@
 
 | Key | Stability | Value Type | Description | Example Values |
 | --- | --- | --- | --- | --- |
+| <a id="mainframe-channel-mode" href="#mainframe-channel-mode">`mainframe.channel.mode`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Mode the I/O channel is operating in. The mode can be either 'dedicated' or 'shared'. | `dedicated`; `shared` |
+| <a id="mainframe-channel-name" href="#mainframe-channel-name">`mainframe.channel.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The name of the I/O channel in the form CSS.Chpid. | `0.00`; `0.2D`; `1.E3` |
+| <a id="mainframe-channel-owning-partition" href="#mainframe-channel-owning-partition">`mainframe.channel.owning.partition`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The partition that owns the I/O channel, in case the channel is dedicated to a specific partition. If the channel is shared, this attribute is set to 'shared'. | `LPAR01`; `shared` |
 | <a id="mainframe-cpu-mode" href="#mainframe-cpu-mode">`mainframe.cpu.mode`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Mode the processor is operating in. The mode can be either 'dedicated' or 'shared'. | `dedicated`; `shared` |
 | <a id="mainframe-cpu-name" href="#mainframe-cpu-name">`mainframe.cpu.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The name of the processor in the form processor-type + processor ID. | `IFL01` |
 | <a id="mainframe-cpu-type" href="#mainframe-cpu-type">`mainframe.cpu.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of mainframe processor. | `CP`; `ICF`; `IFL` |
@@ -15,6 +18,15 @@
 | <a id="mainframe-host-serial-number" href="#mainframe-host-serial-number">`mainframe.host.serial_number`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Serial number of the central processing complex (CPC). | `0000000ABCDE` |
 | <a id="mainframe-partition-name" href="#mainframe-partition-name">`mainframe.partition.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Name of the logical partition that hosts a systems with a mainframe operating system. | `LPAR01` |
 
+
+---
+
+`mainframe.channel.mode` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `dedicated` | The I/O channel is dedicated to a specific partition and cannot be shared with other partitions. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `shared` | The I/O channel can be shared among multiple partitions and is not dedicated to a specific partition. | ![Development](https://img.shields.io/badge/-development-blue) |
 
 ---
 

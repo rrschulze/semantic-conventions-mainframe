@@ -6,7 +6,7 @@ groups:
   brief: "The number of active processors in the mainframe system of a specific type."
   instrument: updowncounter
   unit: "{cpu}"
-  extends: system.cpu.physical.count
+  extends: metric.system.cpu.physical.count
   entity_associations:
     - mainframe.host
   attributes:
