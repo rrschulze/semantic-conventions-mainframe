@@ -1,16 +1,32 @@
 groups:
-- id: metric.mainframe.cpu.physical.count
+- id: metric.mainframe.host.cpu.active.count
   type: metric
-  metric_name: mainframe.cpu.physical.count
+  metric_name: mainframe.cpu.active.count
   stability: development
-  brief: "The number of physical CPUs in the mainframe system of a specific type."
+  brief: "The number of active processors in the mainframe system of a specific type."
   instrument: updowncounter
   unit: "{cpu}"
-  extends: metric.system.cpu.physical.count
+  extends: system.cpu.physical.count
   entity_associations:
     - mainframe.host
   attributes:
     - ref: mainframe.cpu.type
       requirement_level: required
-    - ref: mainframe.cpu.mode
-      requirement_level: required
+- id: metric.mainframe.host.cpu.defective.count
+  type: metric
+  metric_name: mainframe.cpu.defective.count
+  stability: development
+  brief: "The number of defective processors in the mainframe system."
+  instrument: updowncounter
+  unit: "{cpu}"
+  entity_associations:
+    - mainframe.host
+- id: metric.mainframe.host.cpu.spare.count
+  type: metric
+  metric_name: mainframe.cpu.spare.count
+  stability: development
+  brief: "The number of spare processors in the mainframe system."
+  instrument: updowncounter
+  unit: "{cpu}"
+  entity_associations:
+    - mainframe.host

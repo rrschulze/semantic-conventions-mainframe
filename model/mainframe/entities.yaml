@@ -37,3 +37,21 @@ groups:
         role: descriptive
         requirement_level: recommended
         examples: ["ME1"]
+  - id: entity.mainframe.channel
+    type: entity
+    stability: development
+    name: mainframe.channel
+    brief: A mainframe channel, representing the physical I/O channel that connects the Central Processor Complex (CPC) to peripheral devices. 
+    attributes:
+      - ref: mainframe.channel.name
+        role: identifying
+        requirement_level: required
+        examples: ["0.00", "0.2D", "1.E3"]
+      - ref: mainframe.channel.mode
+        role: descriptive
+        requirement_level: required
+        examples: ["dedicated", "shared"]
+      - ref: mainframe.channel.owning.partition
+        role: descriptive
+        requirement_level: recommended
+        examples: ["LPAR01", "shared"]
