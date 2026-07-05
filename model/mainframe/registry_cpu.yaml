@@ -14,6 +14,10 @@ groups:
         brief: "Type of mainframe processor."
         type: 
           members:
+            - id: all
+              value: "all"
+              brief: "All types of mainframe processors."
+              stability: development
             - id: cp
               value: "CP"
               brief: "Central Processor (CP) is the main processor of the central processing complex that hosts a mainframe operating system."
@@ -39,6 +43,10 @@ groups:
         brief: "Mode the processor is operating in. The mode can be either 'dedicated' or 'shared'."
         type: 
           members:
+            - id: all
+              value: "all"
+              brief: "All mainframe processors, both shared and dedicated"
+              stability: development
             - id: dedicated
               value: "dedicated"
               brief: "The processor is dedicated to a specific partition and cannot be shared with other partitions."

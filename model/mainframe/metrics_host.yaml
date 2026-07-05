@@ -30,3 +30,48 @@ groups:
   unit: "{cpu}"
   entity_associations:
     - mainframe.host
+- id: metric.mainframe.host.memory.size
+  type: metric  
+  metric_name: mainframe.host.memory.size
+  stability: development
+  brief: "Size of memory in the mainframe system of a specific type."
+  instrument: gauge
+  unit: "MiBy"
+  entity_associations:
+    - mainframe.host
+  attributes:
+    - ref: mainframe.memory.type
+      requirement_level: required
+- id: metric.mainframe.host.memory.vfm.increment.size
+  type: metric  
+  metric_name: mainframe.host.memory.vfm.increment.size
+  stability: development
+  brief: "Size of the IBM Virtual Flash Memory (VFM) memory increments of the mainframe system."
+  instrument: gauge
+  unit: "GiBy"
+  entity_associations:
+    - mainframe.host
+- id: metric.mainframe.host.memory.vfm.size
+  type: metric  
+  metric_name: mainframe.host.memory.vfm.size
+  stability: development
+  brief: "Total size of the installed IBM Virtual Flash Memory (VFM) memory in the mainframe system."
+  instrument: gauge
+  unit: "GiBy"
+  entity_associations:
+    - mainframe.host
+- id: metric.mainframe.host.cpu.utilization
+  type: metric
+  metric_name: mainframe.host.cpu.utilization
+  stability: development
+  brief: "The utilization of the processors of the given type in the mainframe system."
+  instrument: gauge
+  unit: "{cpu}"
+  extends: metric.system.cpu.utilization
+  entity_associations:
+    - mainframe.host
+  attributes:
+    - ref: mainframe.cpu.type
+      requirement_level: required
+    - ref: mainframe.cpu.mode
+      requirement_level: required
