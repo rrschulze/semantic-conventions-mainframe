@@ -115,3 +115,94 @@ groups:
         requirement_level: required
       - ref: mainframe.cpu.mode
         requirement_level: required
+# Temperature metrics. One possible source is the CPC metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.host.temperature
+    type: metric
+    metric_name: mainframe.host.temperature
+    annotations:
+      code_generation:
+        metric_value_type: double
+    stability: development
+    brief: "The temperature of the mainframe system in degrees Celsius."
+    instrument: gauge
+    unit: "Cel"
+    entity_associations:
+      - mainframe.host
+    attributes:
+      - ref: mainframe.host.temperature.type
+        requirement_level: required
+# Environmental metrics. One possible source is the CPC metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.host.humidity
+    type: metric
+    metric_name: mainframe.host.humidity
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "Relative humidity of the environment surrounding the mainframe system."
+    instrument: gauge
+    unit: "1"
+    entity_associations:
+      - mainframe.host
+  - id: metric.mainframe.host.dewpoint
+    type: metric
+    metric_name: mainframe.host.dewpoint
+    annotations:
+      code_generation:
+        metric_value_type: double
+    stability: development
+    brief: "Dew point temperature of the environment surrounding the mainframe system."
+    instrument: gauge
+    unit: "Cel"
+    entity_associations:
+      - mainframe.host
+# Heat load metrics. One possible source is the CPC metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.host.heatload
+    type: metric
+    metric_name: mainframe.host.heatload
+    annotations:
+      code_generation:
+        metric_value_type: double
+    stability: development
+    brief: "Heat load of the mainframe system in BTU/h."
+    instrument: gauge
+    unit: "BTU/h"
+    entity_associations:
+      - mainframe.host
+    attributes:
+      - ref: mainframe.host.heatload.type
+        requirement_level: required
+# Power usage metrics. One possible source is the CPC metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.host.power.usage
+    type: metric
+    metric_name: mainframe.host.power.usage
+    annotations:
+      code_generation:
+        metric_value_type: double
+    stability: development
+    brief: "Power usage of the mainframe system in Watts."
+    instrument: gauge
+    unit: "W"
+    entity_associations:
+      - mainframe.host
+    attributes:
+      - ref: mainframe.host.power.usage.type
+        requirement_level: required
+# Power cord usage metrics. One possible source is the CPC metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.host.power.cord.usage
+    type: metric
+    metric_name: mainframe.host.power.cord.usage
+    annotations:
+      code_generation:
+        metric_value_type: double
+    stability: development
+    brief: "Power cord usage of the mainframe system in Watts."
+    instrument: gauge
+    unit: "W"
+    entity_associations:
+      - mainframe.host
+    attributes:
+      - ref: mainframe.host.power.cord
+        requirement_level: required
+      - ref: mainframe.host.power.phase
+        requirement_level: required

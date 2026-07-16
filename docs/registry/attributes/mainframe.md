@@ -16,11 +16,17 @@
 | <a id="mainframe-cpu-mode" href="#mainframe-cpu-mode">`mainframe.cpu.mode`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Mode the processor is operating in. The mode can be either 'dedicated' or 'shared'. | `all`; `dedicated`; `shared` |
 | <a id="mainframe-cpu-name" href="#mainframe-cpu-name">`mainframe.cpu.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The name of the processor in the form processor-type + processor ID. | `IFL01` |
 | <a id="mainframe-cpu-type" href="#mainframe-cpu-type">`mainframe.cpu.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of mainframe processor. | `all`; `CP`; `ICF` |
+| <a id="mainframe-host-heatload-type" href="#mainframe-host-heatload-type">`mainframe.host.heatload.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of heat load measurement for the Central Processor Complex (CPC). | `total`; `forced-air`; `water` |
 | <a id="mainframe-host-machine-model" href="#mainframe-host-machine-model">`mainframe.host.machine_model`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | IBM machine model of the Central Processor Complex (CPC). | `ME1`; `ML1`; `A01`; `LA1` |
 | <a id="mainframe-host-machine-type" href="#mainframe-host-machine-type">`mainframe.host.machine_type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Four-digit IBM machine type of the Central Processor Complex (CPC). | `9175`; `3931` |
+| <a id="mainframe-host-power-cord" href="#mainframe-host-power-cord">`mainframe.host.power.cord`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Identfies the power cord of the Central Processor Complex (CPC). | `1`; `2`; `3` |
+| <a id="mainframe-host-power-phase" href="#mainframe-host-power-phase">`mainframe.host.power.phase`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Identifies the power phase of the Central Processor Complex (CPC). | `A`; `B`; `C` |
+| <a id="mainframe-host-power-usage-type" href="#mainframe-host-power-usage-type">`mainframe.host.power.usage.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of power usage measurement for the Central Processor Complex (CPC). | `total`; `partitions`; `infrastructure` |
 | <a id="mainframe-host-serial-number" href="#mainframe-host-serial-number">`mainframe.host.serial_number`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Serial number of the central processing complex (CPC). | `0000000ABCDE` |
+| <a id="mainframe-host-temperature-type" href="#mainframe-host-temperature-type">`mainframe.host.temperature.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Location of the Central Processor Complex (CPC). | `ambient`; `exhaust` |
 | <a id="mainframe-memory-type" href="#mainframe-memory-type">`mainframe.memory.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of mainframe memory. | `total`; `HSA`; `partitions` |
 | <a id="mainframe-partition-name" href="#mainframe-partition-name">`mainframe.partition.name`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Name of the logical partition that hosts a systems with a mainframe operating system. | `LPAR01` |
+| <a id="mainframe-partition-weight-type" href="#mainframe-partition-weight-type">`mainframe.partition.weight.type`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | Type of weight. | `initial`; `minimum`; `current` |
 
 
 ---
@@ -68,6 +74,61 @@
 
 ---
 
+`mainframe.host.heatload.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `forced-air` | Forced-air heat load. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `total` | Total heat load. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `water` | Water heat load. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+---
+
+`mainframe.host.power.cord` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `1` | Power cord 1. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `2` | Power cord 2. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `3` | Power cord 3. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `4` | Power cord 4. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `5` | Power cord 5. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `6` | Power cord 6. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `7` | Power cord 7. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `8` | Power cord 8. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+---
+
+`mainframe.host.power.phase` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `A` | Power phase A. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `B` | Power phase B. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `C` | Power phase C. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+---
+
+`mainframe.host.power.usage.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `infrastructure` | Total power consumption of all infrastructure components. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `partitions` | Total power consumption of all partitions. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `total` | Total power usage. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `unassigned` | Total power consumption of all unassigned components. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+---
+
+`mainframe.host.temperature.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `ambient` | Ambient temperature. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `exhaust` | Exhaust temperature. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+---
+
 `mainframe.memory.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
 
 | Value | Description | Stability |
@@ -78,3 +139,14 @@
 | `HSA` | Memory reserved for the base hardware system area (HSA), which is used for system management and I/O processing on the mainframe. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `partitions` | Memory for use by partitions, which are logical divisions of the mainframe system that can run separate operating systems and workloads. | ![Development](https://img.shields.io/badge/-development-blue) |
 | `total` | Total amount of installed memory in the mainframe system. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+---
+
+`mainframe.partition.weight.type` has the following list of well-known values. If one of them applies, then the respective value MUST be used; otherwise, a custom value MAY be used.
+
+| Value | Description | Stability |
+| --- | --- | --- |
+| `current` | Current weight for the partition | ![Development](https://img.shields.io/badge/-development-blue) |
+| `initial` | Initial weight for the partition | ![Development](https://img.shields.io/badge/-development-blue) |
+| `maximum` | Maximum weight for the partition | ![Development](https://img.shields.io/badge/-development-blue) |
+| `minimum` | Minimum weight for the partition | ![Development](https://img.shields.io/badge/-development-blue) |

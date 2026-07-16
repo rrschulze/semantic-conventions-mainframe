@@ -1,0 +1,17 @@
+groups:
+# Adapter utilization metrics. One possible source is the Adapter metric group of the IBM Z HMC Web Services API.
+  - id: metric.mainframe.adapter.utilization
+    type: metric  
+    metric_name: mainframe.adapter.utilization
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "The percentage of time the adapter was processing I/O."
+    instrument: gauge
+    unit: "1"
+    entity_associations:
+      - mainframe.adapter
+    attributes:
+      - ref: mainframe.adapter.type
+        requirement_level: required
