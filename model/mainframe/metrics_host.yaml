@@ -206,3 +206,28 @@ groups:
         requirement_level: required
       - ref: mainframe.host.power.phase
         requirement_level: required
+# Status
+  - id: metric.mainframe.host.status
+    type: metric
+    metric_name: mainframe.host.status
+    annotations:
+      code_generation:
+        metric_value_type: int
+    stability: development
+    brief: "The status of the mainframe system."
+    instrument: gauge
+    unit: "1"
+    entity_associations:
+      - mainframe.host
+  - id: metric.mainframe.host.status.unacceptable
+    type: metric
+    metric_name: mainframe.host.status.unacceptable
+    annotations:
+      code_generation:
+        metric_value_type: bool
+    stability: development
+    brief: "Indicating whether the CPC has an unacceptable status."
+    instrument: updowncounter
+    unit: "1"
+    entity_associations:
+      - mainframe.host
